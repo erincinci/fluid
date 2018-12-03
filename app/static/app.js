@@ -28,7 +28,7 @@ fluid.controller('ChromecastController', function($scope, $interval, $http) {
 			});
     }
     get_status();
-    $interval(get_status, 2000);
+    $interval(get_status, 5000);
 
     $scope.chromecast_command = function($uri) {
         $http.get($uri);

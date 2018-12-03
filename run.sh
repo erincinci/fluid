@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 secrets_file="./secrets.env"
 virtualenv_dir="./fluid-server"
+temp_media_dir="./app/static/tmp"
 
 # Read variables from env file
 if [ ! -f ${secrets_file} ]; then
@@ -15,6 +16,12 @@ if [ ! -d ${virtualenv_dir} ]; then
     virtualenv -p python3 fluid-server
 fi
 source fluid-server/bin/activate
+
+# Create temp media directory if not exist
+if [ ! -d ${temp_media_dir} ]; then
+    echo "Initialising temp media dir.."
+    mkdir ${temp_media_dir}
+fi
 
 # Update requirements
 echo "Updating Python requirements.."

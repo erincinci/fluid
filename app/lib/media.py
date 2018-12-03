@@ -15,7 +15,7 @@ class Media(object):
     def __init__(self, filename):
         self.filename = filename
         self.pieces = filename.split('.')
-        self.pieces.pop(-1)
+        self.extension = self.pieces.pop(-1)
         self.quality = self.pieces.pop(-1)
         self.year = self.pieces.pop(-1)
         self.query = ' '.join(self.pieces)
