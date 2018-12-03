@@ -35,7 +35,7 @@ class Media(object):
         if not os.path.exists(self.data_path):
             logging.debug('Loading data on {}'.format(self.filename))
 
-            response = omdb.request(t=self.query, y=self.year).json()
+            response = omdb.request(t=self.query, y=self.year, apikey=os.environ['OMDB_API_KEY']).json()
             if response['Response'] == 'True':
                 with open(self.data_path, 'w') as f:
                     json.dump(response, f)
