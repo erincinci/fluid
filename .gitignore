@@ -2,5 +2,8 @@
 *.pyc
 .env
 *.log
+fluid-server/
 app/static/tmp/
 bower_components/
+.idea/
+secrets.env

@@ -2,9 +2,9 @@
 Routes for browsing movies and controlling the Chromecast media controller.
 """
 from flask import Blueprint, current_app, render_template, jsonify, g
-from lib.chromecast import Chromecast
-from lib.media import Media
-import lib.partial_file as partial_file
+from app.lib.chromecast import Chromecast
+from app.lib.media import Media
+import app.lib.partial_file as partial_file
 import mimetypes
 import os
 

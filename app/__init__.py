@@ -3,13 +3,9 @@ Browse your local movies with IMDB data and stream them to a Chromecast.
 """
 from flask import Flask, render_template
 from flask_bower import Bower
-from routes import root
+from app.routes import root
 import logging
 import os
-import sys
-
-reload(sys)
-sys.setdefaultencoding("utf-8")
 
 
 def init_app():
