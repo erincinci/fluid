@@ -16,8 +16,11 @@ if [ ! -d ${virtualenv_dir} ]; then
 fi
 source fluid-server/bin/activate
 
-# Update requirement
+# Update requirements
+echo "Updating Python requirements.."
 pip install -q -r requirements.txt
+echo "Updating Bower requirements.."
+bower install -q
 
 # Start media server
 python run.py --host ${FLUID_HOST} --port ${FLUID_PORT} --debug
